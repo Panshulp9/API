@@ -9,6 +9,7 @@ import java.net.URL;
 // video to load jar
 //https://www.youtube.com/watch?v=QAJ09o3Xl_0
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -98,6 +99,14 @@ public class ReadJson {
             //todo: print out the heigh of darth vader
             String eyeColor = (String) jsonObject.get("eye_color");
             System.out.println("The color of Darth Vader's eyes is " + eyeColor + ".");
+
+            JSONArray starShip = (JSONArray) jsonObject.get("starships");
+            int z = starShip.size();
+            for (int i = 0; i < z; ++i) {
+                String star =(String) starShip.get(i);
+                System.out.println(star);
+                // System.out.println(person.getInt("key"));
+            }
         }
 
         catch (Exception e) {
